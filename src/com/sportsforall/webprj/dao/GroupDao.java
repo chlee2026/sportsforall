@@ -14,7 +14,10 @@ public class GroupDao {
 		System.out.print("sdsdsdsdsd");
 
 	}
+	public void Groupdd(){
+		System.out.print("이선필멍충이");
 
+	}
 
 
 	
