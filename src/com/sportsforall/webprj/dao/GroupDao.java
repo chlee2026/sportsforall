@@ -4,6 +4,12 @@ public class GroupDao {
 	
 	private int abcd;
 	String seolhwa="머지?? merge??";
-	String merge = "뭘까요";
+	String merge = "뭘까요????????? 히히히히히";
+	
+	public void Group(){
+		System.out.print("ggggggggggggggggggggggggggggggggg");
+	}
 
+	
+	
 }
