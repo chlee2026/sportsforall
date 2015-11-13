@@ -10,6 +10,12 @@ public class GroupDao {
 		System.out.print("ggggggggggggggggggggggggggggggggg");
 	}
 
+	public void Groupd(){
+		System.out.print("sdsdsdsdsd");
+
+	}
+
+
 
 	
 	
