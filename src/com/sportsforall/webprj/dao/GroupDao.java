@@ -9,6 +9,10 @@ public class GroupDao {
 	public void Group(){
 		System.out.print("ggggggggggggggggggggggggggggggggg");
 	}
+	public void Groupd(){
+		System.out.print("sdsdsdsdsd");
+
+	}
 
 
 	
