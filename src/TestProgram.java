@@ -38,7 +38,7 @@ public class TestProgram {
 				System.out.println("검색결과:" +	dao.insert(member));*/
 				
 				//출력
-		/*		System.out.println("검색결과:" + list.size());
+		/*	d	System.out.println("검색결과:" + list.size());
 				
 				for(Member m : list)
 				{
