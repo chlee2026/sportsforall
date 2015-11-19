@@ -4,19 +4,20 @@ import java.util.Date;
 
 public class Group {
 	
-	private String Group_Code;
+	private String Code;
 	private String Member_Email;
 	private String Game_Code;
+	private String Name;
 	private Date OpenDate;
 	private Date CloseDate;
 	private int Fixed_Num;
 	
 	
-	public String getGroup_Code() {
-		return Group_Code;
+	public String getCode() {
+		return Code;
 	}
-	public void setGroup_Code(String group_Code) {
-		Group_Code = group_Code;
+	public void setCode(String code) {
+		Code = code;
 	}
 	public String getMember_Email() {
 		return Member_Email;
@@ -29,6 +30,12 @@ public class Group {
 	}
 	public void setGame_Code(String game_Code) {
 		Game_Code = game_Code;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
 	}
 	public Date getOpenDate() {
 		return OpenDate;
@@ -48,6 +55,8 @@ public class Group {
 	public void setFixed_Num(int fixed_Num) {
 		Fixed_Num = fixed_Num;
 	}
+	
+	
 	
 	
 

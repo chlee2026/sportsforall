@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Group_Message_Comment {
 	
-	private String Group_Message_Comment_Code;
+	private String Code;
 	private String Member_Email;
 	private String Group_Code;
 	private String Group_Message_Code;
@@ -12,11 +12,11 @@ public class Group_Message_Comment {
 	private Date Post_Time;
 	
 	
-	public String getGroup_Message_Comment_Code() {
-		return Group_Message_Comment_Code;
+	public String getCode() {
+		return Code;
 	}
-	public void setGroup_Message_Comment_Code(String group_Message_Comment_Code) {
-		Group_Message_Comment_Code = group_Message_Comment_Code;
+	public void setCode(String code) {
+		Code = code;
 	}
 	public String getMember_Email() {
 		return Member_Email;
@@ -47,7 +47,8 @@ public class Group_Message_Comment {
 	}
 	public void setPost_Time(Date post_Time) {
 		Post_Time = post_Time;
-	} 
+	}
+	
 	
 	
 

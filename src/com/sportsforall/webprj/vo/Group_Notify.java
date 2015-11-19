@@ -4,18 +4,18 @@ import java.util.Date;
 
 public class Group_Notify {
 
-	private String Group_Notify_Code;
+	private String Code;
 	private String Member_Email;
 	private String Group_Code;
 	private Date Regdate;
 	private String Contents;
 	
 	
-	public String getGroup_Notify_Code() {
-		return Group_Notify_Code;
+	public String getCode() {
+		return Code;
 	}
-	public void setGroup_Notify_Code(String group_Notify_Code) {
-		Group_Notify_Code = group_Notify_Code;
+	public void setCode(String code) {
+		Code = code;
 	}
 	public String getMember_Email() {
 		return Member_Email;
@@ -41,6 +41,8 @@ public class Group_Notify {
 	public void setContents(String contents) {
 		Contents = contents;
 	}
+	
+	
 	
 	
 	
