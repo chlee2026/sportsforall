@@ -15,8 +15,8 @@ public class JdbcGroupDao implements GroupDao {
 	@Override
 	public List<Group> getGroup() throws SQLException {		
 		
-		String sql ="select Name, Fixed_Num from Groupp;";
-		String url ="jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
+		String sql = "select Name, Fixed_Num from Groupp;";
+		String url = "jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
 		
 		Connection con = DriverManager.getConnection(url, "dalin", "20151030");
 		PreparedStatement st = con.prepareStatement(sql);
@@ -62,7 +62,7 @@ public class JdbcGroupDao implements GroupDao {
 	public int insert(Group group) throws SQLException {
 		
 		String sql = "insert into Groupp(Code, Member_Email, Game_Code, Name, Fixed_Num) values(?, ?, ?, ?, ?);";
-		String url ="jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
+		String url = "jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
 		
 		Connection con = DriverManager.getConnection(url, "dalin", "20151030");
 		PreparedStatement st = con.prepareStatement(sql);
@@ -85,7 +85,7 @@ public class JdbcGroupDao implements GroupDao {
 	public int update(Group group) throws SQLException {
 		
 		String sql = "update Groupp set Game_Code=?, Fixed_Num=?  where Name=?;";
-		String url ="jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
+		String url = "jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
 		
 		Connection con = DriverManager.getConnection(url, "dalin", "20151030");
 		PreparedStatement st = con.prepareStatement(sql);
@@ -103,9 +103,22 @@ public class JdbcGroupDao implements GroupDao {
 	}
 
 	@Override
-	public int delete(Group name) {
+	public int delete(String name) throws SQLException {
 		
-		return 0;
+		String sql = "delete Groupp where Name=?;";
+		String url = "jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
+		
+		Connection con = DriverManager.getConnection(url, "dalin", "20151030");
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setString(1, name);
+		
+		int aft = st.executeUpdate();
+		
+		st.close();
+		con.close();
+		
+		return aft;
 	}
 
 	

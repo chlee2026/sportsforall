@@ -80,7 +80,21 @@ public class SeolhwaProgram {
 		
 		System.out.println("실행: "+dao.update(group));*/
 		
-		//JdbcGroupDao실행 - delete
+		/*//JdbcGroupDao실행 - delete
+		GroupDao dao = new JdbcGroupDao();
+		Group group = new Group();
+		
+		group.setName("서롸모임");
+		
+		System.out.println("실행: " + dao.delete(group.getName()));*/
+		
+		//MyBatisGroupDao실행 - delete
+		GroupDao dao = new MyBatisGroupDao();
+		Group group = new Group();
+		
+		group.setName("서라모임");
+		
+		System.out.println("실행: " + dao.delete(group.getName()));
 		
 		
 		

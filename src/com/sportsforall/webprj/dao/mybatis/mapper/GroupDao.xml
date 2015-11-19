@@ -16,5 +16,8 @@
   	UPDATE GROUPP SET GAME_CODE=#{Game_Code}, FIXED_NUM=#{Fixed_Num} WHERE NAME=#{Name}
   </update>
   
+  <delete id="delete">
+  DELETE GROUPP WHERE NAME=#{Name}
+  </delete>
   
   </mapper>

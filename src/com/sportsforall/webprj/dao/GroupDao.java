@@ -11,7 +11,7 @@ public interface GroupDao {
 	//public List<Group> getGroup(String name) throws SQLException;
 	public int insert(Group group) throws SQLException;
 	public int update(Group group) throws SQLException;
-	public int delete(Group name);
+	public int delete(String name) throws SQLException;
 	
 
 }

@@ -54,9 +54,17 @@ public class MyBatisGroupDao implements GroupDao{
 	}
 
 	@Override
-	public int delete(Group name) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(String name) throws SQLException {
+
+		SqlSession session = ssf.openSession();
+		GroupDao dao = session.getMapper(GroupDao.class);
+		
+		int count = dao.delete(name);
+		
+		session.commit();
+		session.close();
+		
+		return count;
 	}
 	
 
