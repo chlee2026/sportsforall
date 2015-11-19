@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.sportsforall.webprj.dao.GroupDao">
+  <select id="getGroup" resultType="com.sportsforall.webprj.vo.Group">
+  		SELECT NAME, FIXED_NUM FROM GROUPP
+  </select>
+  </mapper>

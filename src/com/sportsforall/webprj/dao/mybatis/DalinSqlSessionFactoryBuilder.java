@@ -1,4 +1,4 @@
-package com.sportsforall.webprj.mybatis;
+package com.sportsforall.webprj.dao.mybatis;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,7 +7,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class NewlecSqlSessionFactoryBuilder {
+public class DalinSqlSessionFactoryBuilder {
 	
 	static SqlSessionFactory ssf;
 

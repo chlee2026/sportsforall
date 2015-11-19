@@ -1,4 +1,4 @@
-package com.sportsforall.webprj.mybatis;
+package com.sportsforall.webprj.dao.mybatis;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,7 +10,7 @@ import com.sportsforall.webprj.dao.MemberDao;
 import com.sportsforall.webprj.vo.Member;
 
 public class MybatisMemberDao implements MemberDao{
-	SqlSessionFactory ssf = NewlecSqlSessionFactoryBuilder.getSqlSessionFactory();
+	SqlSessionFactory ssf = DalinSqlSessionFactoryBuilder.getSqlSessionFactory();
 	
 	@Override
 	public List<Member> getMembers() throws SQLException {
