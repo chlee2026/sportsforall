@@ -9,8 +9,8 @@ public interface GroupDao {
 	
 	public List<Group> getGroup() throws SQLException;
 	//public List<Group> getGroup(String name) throws SQLException;
-	public int insert(Group group);
-	public int update(Group group);
+	public int insert(Group group) throws SQLException;
+	public int update(Group group) throws SQLException;
 	public int delete(Group name);
 	
 

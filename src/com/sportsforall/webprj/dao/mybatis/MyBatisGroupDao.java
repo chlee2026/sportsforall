@@ -26,15 +26,31 @@ public class MyBatisGroupDao implements GroupDao{
 	}
 
 	@Override
-	public int insert(Group group) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insert(Group group) throws SQLException {
+	
+		SqlSession session = ssf.openSession();
+		GroupDao dao = session.getMapper(GroupDao.class);
+		
+		int count = dao.insert(group);
+		
+		session.commit();
+		session.close();
+		
+		return count;
 	}
 
 	@Override
-	public int update(Group group) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int update(Group group) throws SQLException {
+
+		SqlSession session = ssf.openSession();
+		GroupDao dao = session.getMapper(GroupDao.class);
+		
+		int count = dao.update(group);
+		
+		session.commit();
+		session.close();
+		
+		return count;
 	}
 
 	@Override

@@ -7,4 +7,14 @@
   <select id="getGroup" resultType="com.sportsforall.webprj.vo.Group">
   		SELECT NAME, FIXED_NUM FROM GROUPP
   </select>
+  
+  <insert id="insert">
+  	INSERT INTO GROUPP(CODE, MEMBER_EMAIL, GAME_CODE, NAME, OPENDATE, CLOSEDATE, FIXED_NUM) VALUES(#{Code}, #{Member_Email}, #{Game_Code}, #{Name}, #{OpenDate}, #{CloseDate}, #{Fixed_Num})
+  </insert>
+  
+  <update id="update">
+  	UPDATE GROUPP SET GAME_CODE=#{Game_Code}, FIXED_NUM=#{Fixed_Num} WHERE NAME=#{Name}
+  </update>
+  
+  
   </mapper>

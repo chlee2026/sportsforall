@@ -59,15 +59,47 @@ public class JdbcGroupDao implements GroupDao {
 	}*/
 	
 	@Override
-	public int insert(Group group) {
+	public int insert(Group group) throws SQLException {
 		
-		return 0;
+		String sql = "insert into Groupp(Code, Member_Email, Game_Code, Name, Fixed_Num) values(?, ?, ?, ?, ?);";
+		String url ="jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
+		
+		Connection con = DriverManager.getConnection(url, "dalin", "20151030");
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setString(1, group.getCode());
+		st.setString(2, group.getMember_Email());
+		st.setString(3, group.getGame_Code());
+		st.setString(4, group.getName());
+		st.setInt(5, group.getFixed_Num());
+		
+		int aft = st.executeUpdate();
+		
+		st.close();
+		con.close();
+		
+		return aft;
 	}
 
 	@Override
-	public int update(Group group) {
+	public int update(Group group) throws SQLException {
 		
-		return 0;
+		String sql = "update Groupp set Game_Code=?, Fixed_Num=?  where Name=?;";
+		String url ="jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
+		
+		Connection con = DriverManager.getConnection(url, "dalin", "20151030");
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setString(1, group.getGame_Code());
+		st.setInt(2 , group.getFixed_Num());
+		st.setString(3, group.getName());
+		
+		int aft = st.executeUpdate();
+		
+		st.close();
+		con.close();
+		
+		return aft;
 	}
 
 	@Override
