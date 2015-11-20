@@ -15,11 +15,31 @@ public class JdbcGroupDao implements GroupDao {
 	@Override
 	public List<Group> getGroup() throws SQLException {		
 		
-		String sql = "select Name, Fixed_Num from Groupp;";
+		return getGroup("OpenDate",1,"");
+	}
+
+	@Override
+	public List<Group> getGroup(int page) throws SQLException {
+		
+		return getGroup("OpenDate",page,"");
+	}
+	
+	@Override
+	public List<Group> getGroup(String column, int page, String name) throws SQLException {
+		
+		int start = 1+(page-1)*10;
+		int end = page*10;
+		
+		String sql = "SELECT * FROM(SELECT ROW_NUMBER() OVER (ORDER BY "+column+" DESC)NUM, GROUPP.*FROM GROUPP WHERE NAME LIKE ?) A "
+				+ "WHERE NUM BETWEEN ? AND ?;";
 		String url = "jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
 		
 		Connection con = DriverManager.getConnection(url, "dalin", "20151030");
 		PreparedStatement st = con.prepareStatement(sql);
+
+		st.setString(1, "%"+name+"%");
+		st.setInt(2, start);
+		st.setInt(3, end);
 		
 		ResultSet rs = st.executeQuery();
 		
@@ -31,6 +51,7 @@ public class JdbcGroupDao implements GroupDao {
 			
 			group.setName(rs.getString("Name"));
 			group.setFixed_Num(rs.getInt("Fixed_Num"));
+			group.setOpenDate(rs.getDate("OpenDate"));
 			
 			list.add(group);
 		}
@@ -41,22 +62,8 @@ public class JdbcGroupDao implements GroupDao {
 		
 		return list;
 	}
-
 	
-	/*public List<Group> getGroup(String name) throws SQLException {
-		
-		String sql ="select Name 모임이름, Fixed_Num 모임총인원 from Groupp;";
-		String url ="jdbc:sqlserver://211.238.142.251:1433;databaseName=sportsforall";
-		
-		Connection con = DriverManager.getConnection(url, "dalin", "20151030");
-		PreparedStatement st = con.prepareStatement(sql);
-		
-		
-		
-		ResultSet rs = st.executeQuery();
-		
-		return null;
-	}*/
+	
 	
 	@Override
 	public int insert(Group group) throws SQLException {
@@ -120,6 +127,11 @@ public class JdbcGroupDao implements GroupDao {
 		
 		return aft;
 	}
+
+
+
+
+
 
 	
 }

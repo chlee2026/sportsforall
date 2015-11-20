@@ -16,15 +16,28 @@ public class MyBatisGroupDao implements GroupDao{
 	@Override
 	public List<Group> getGroup() throws SQLException {
 		
+		return getGroup("OpenDate", 1, "");
+	}
+
+	@Override
+	public List<Group> getGroup(int page) throws SQLException {
+		
+		return getGroup("OpenDate", page, "");
+	}
+	
+	public List<Group> getGroup(String column, int page, String name) throws SQLException {
+		
 		SqlSession session = ssf.openSession();
 		GroupDao dao = session.getMapper(GroupDao.class);
-		List<Group>list = dao.getGroup();
+		List<Group>list = dao.getGroup(column, page, name);
 		
 		session.close();
 		
 		return list;
 	}
-
+	
+	
+	
 	@Override
 	public int insert(Group group) throws SQLException {
 	
@@ -66,6 +79,8 @@ public class MyBatisGroupDao implements GroupDao{
 		
 		return count;
 	}
-	
+
+
+
 
 }

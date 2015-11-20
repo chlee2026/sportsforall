@@ -5,7 +5,9 @@
   
 <mapper namespace="com.sportsforall.webprj.dao.GroupDao">
   <select id="getGroup" resultType="com.sportsforall.webprj.vo.Group">
-  		SELECT NAME, FIXED_NUM FROM GROUPP
+  			<!-- SELECT * FROM GROUPP; -->
+  			SELECT * FROM(SELECT ROW_NUMBER() OVER (ORDER BY ${param1} DESC) NUM, 
+  			GROUPP.*FROM GROUPP WHERE NAME LIKE '%${param3}%') A WHERE NUM BETWEEN 1+(#{param2}-1)*10 AND #{param2}*10
   </select>
   
   <insert id="insert">

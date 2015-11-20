@@ -11,27 +11,30 @@ public class SeolhwaProgram {
 
 	public static void main(String[] args) throws SQLException {
 
-	/*	//JdbcGroupDao실행 - select
-		GroupDao
-		dao = new JdbcGroupDao();
-		List<Group> list = dao.getGroup();
-
+		/*//JdbcGroupDao실행 - select
+		GroupDao dao = new JdbcGroupDao();
+		Group gruop = new Group();
+		
+		List<Group> list = dao.getGroup("Fixed_Num", 1,"");
+		
 		System.out.println("결과:" + list.size());
+		
 
 		for (Group g : list) {
-			System.out.printf("모임이름: %s 모임총인원:%d", g.getName(), g.getFixed_Num());
-		}*/
-		
-	/*	//MyBatisGroupDao실행 - select
+			System.out.printf("모임이름: %s 모임총인원:%d date:%s \n", g.getName(), g.getFixed_Num(), g.getOpenDate());
+		}
+*/		
+		//MyBatisGroupDao실행 - select
 		GroupDao dao = new MyBatisGroupDao();
 		Group group = new Group();
-		List<Group> list = dao.getGroup();
+		
+		List<Group> list = dao.getGroup("Fixed_Num",1,"설");
 		
 		System.out.println("결과:" + list.size());
-
+		
 		for (Group g : list) {
-			System.out.printf("모임이름: %s 모임총인원:%d", g.getName(), g.getFixed_Num());
-		}*/
+			System.out.printf("모임이름: %s 모임총인원:%d date:%s \n", g.getName(), g.getFixed_Num(), g.getOpenDate());
+		}
 
 		/*//JdbcGroupDao실행 - insert
 		GroupDao dao = new JdbcGroupDao();
@@ -88,14 +91,14 @@ public class SeolhwaProgram {
 		
 		System.out.println("실행: " + dao.delete(group.getName()));*/
 		
-		//MyBatisGroupDao실행 - delete
+		/*//MyBatisGroupDao실행 - delete
 		GroupDao dao = new MyBatisGroupDao();
 		Group group = new Group();
 		
 		group.setName("서라모임");
 		
 		System.out.println("실행: " + dao.delete(group.getName()));
-		
+		*/
 		
 		
 		
