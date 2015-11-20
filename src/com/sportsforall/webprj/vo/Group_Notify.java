@@ -44,6 +44,4 @@ public class Group_Notify {
 	
 	
 	
-	
-	
 }

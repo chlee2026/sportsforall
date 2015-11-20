@@ -10,7 +10,6 @@ public class Group_Notify_Action {
 	private Date Regdate;
 	
 	
-	
 	public String getCode() {
 		return Code;
 	}
@@ -35,10 +34,6 @@ public class Group_Notify_Action {
 	public void setRegdate(Date regdate) {
 		Regdate = regdate;
 	}
-	
-	
-
-	
 	
 	
 

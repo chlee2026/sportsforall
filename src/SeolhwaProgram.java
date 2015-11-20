@@ -24,7 +24,7 @@ public class SeolhwaProgram {
 			System.out.printf("모임이름: %s 모임총인원:%d date:%s \n", g.getName(), g.getFixed_Num(), g.getOpenDate());
 		}
 */		
-		//MyBatisGroupDao실행 - select
+		/*//MyBatisGroupDao실행 - select
 		GroupDao dao = new MyBatisGroupDao();
 		Group group = new Group();
 		
@@ -34,7 +34,7 @@ public class SeolhwaProgram {
 		
 		for (Group g : list) {
 			System.out.printf("모임이름: %s 모임총인원:%d date:%s \n", g.getName(), g.getFixed_Num(), g.getOpenDate());
-		}
+		}*/
 
 		/*//JdbcGroupDao실행 - insert
 		GroupDao dao = new JdbcGroupDao();

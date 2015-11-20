@@ -49,7 +49,5 @@ public class Group_Message_Comment {
 		Post_Time = post_Time;
 	}
 	
-	
-	
 
 }

@@ -56,8 +56,5 @@ public class Group {
 		Fixed_Num = fixed_Num;
 	}
 	
-	
-	
-	
 
 }

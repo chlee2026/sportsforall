@@ -28,9 +28,5 @@ public class Group_Join {
 		Regdate = regdate;
 	}
 	
-	
-
-	
-	
 
 }

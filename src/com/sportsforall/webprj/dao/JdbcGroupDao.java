@@ -12,8 +12,7 @@ import com.sportsforall.webprj.vo.Group;
 
 public class JdbcGroupDao implements GroupDao {
 
-	@Override
-	public List<Group> getGroup() throws SQLException {		
+public List<Group> getGroup() throws SQLException {		
 		
 		return getGroup("OpenDate",1,"");
 	}
@@ -24,7 +23,7 @@ public class JdbcGroupDao implements GroupDao {
 		return getGroup("OpenDate",page,"");
 	}
 	
-	@Override
+
 	public List<Group> getGroup(String column, int page, String name) throws SQLException {
 		
 		int start = 1+(page-1)*10;
@@ -127,11 +126,5 @@ public class JdbcGroupDao implements GroupDao {
 		
 		return aft;
 	}
-
-
-
-
-
-
 	
 }
