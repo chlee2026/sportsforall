@@ -30,7 +30,10 @@ public class Group_Join {
 	
 	
 
+<<<<<<< HEAD
 	
 	
 
+=======
+>>>>>>> refs/remotes/choose_remote_name/master
 }
